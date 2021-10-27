@@ -1,0 +1,24 @@
+.form {
+  display: flex;
+  margin-top: 20px;
+  height: 40px;
+}
+
+.input {
+  width: 100%;
+  margin-left: 10px;
+  outline: none;
+  border: none;
+}
+
+.button {
+  border-radius: 15px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+.button:hover,
+.button:focus {
+  color: rgb(0, 132, 255);
+}
