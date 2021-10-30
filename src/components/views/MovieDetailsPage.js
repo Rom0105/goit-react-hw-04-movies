@@ -8,9 +8,9 @@ import {
 } from 'react-router-dom';
 import { useState, useEffect, Suspense, lazy } from 'react';
 import PropTypes from 'prop-types';
-
 import fetchMovies from '../../Services/ApiService';
 import style from '../views/MovieDetailsPage.module.css';
+import defaultImage from '../image/image.png';
 
 const Cast = lazy(() => import('../views/Cast'));
 const Reviews = lazy(() => import('../views/Reviews'));
@@ -45,7 +45,7 @@ function MovieDetailsPage() {
                 src={
                   movie.poster_path
                     ? `https://image.tmdb.org/t/p/w300${movie.poster_path}`
-                    : 'not found image'
+                    : defaultImage
                 }
                 alt={movie.title}
               />
@@ -107,10 +107,10 @@ function MovieDetailsPage() {
 }
 
 MovieDetailsPage.propTypes = {
-  url: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired,
-  history: PropTypes.object.isRequired,
-  movieId: PropTypes.object.isRequired,
+  url: PropTypes.object,
+  location: PropTypes.object,
+  history: PropTypes.object,
+  movieId: PropTypes.object,
 };
 
 export default MovieDetailsPage;

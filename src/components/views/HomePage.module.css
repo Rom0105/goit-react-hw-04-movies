@@ -4,11 +4,14 @@
   margin-left: 20px;
 
   box-shadow: 0 0 15px rgb(0 132 255);
+  border-radius: 15px;
 }
 
 .image {
   display: block;
   width: 273px;
+  height: 410px;
+  border-radius: 15px;
 }
 
 .items {
@@ -16,6 +19,7 @@
   flex-wrap: wrap;
   margin-left: -20px;
   margin-top: -20px;
+  margin-bottom: 50px;
   padding: 0;
 
   list-style-type: none;

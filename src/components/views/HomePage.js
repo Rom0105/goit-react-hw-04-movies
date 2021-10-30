@@ -18,7 +18,7 @@ function HomePage() {
       <PageHeading />
       <ul className={styles.items}>
         {movies &&
-          movies.map(({ id, title, poster_path, vote_average, name }) => (
+          movies.map(({ id, title, poster_path, vote_average }) => (
             <li key={id} className={styles.links}>
               <NavLink
                 className={styles.link}
@@ -35,9 +35,7 @@ function HomePage() {
                   alt={title}
                 />
                 <div className={styles.text}>
-                  <span>
-                    {title} {name}
-                  </span>
+                  <span>{title}</span>
                   <span>{vote_average}</span>
                 </div>
               </NavLink>
