@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import PageHeading from '../PageHeading/PageHeading';
 import fetchMovies from '../../Services/ApiService';
 import styles from '../views/HomePage.module.css';
@@ -46,5 +47,13 @@ function HomePage() {
     </>
   );
 }
+
+HomePage.propTypes = {
+  id: PropTypes.number,
+  poster_path: PropTypes.string,
+  title: PropTypes.string,
+  name: PropTypes.string,
+  vote_average: PropTypes.string,
+};
 
 export default HomePage;

@@ -7,6 +7,8 @@ import {
   useHistory,
 } from 'react-router-dom';
 import { useState, useEffect, Suspense, lazy } from 'react';
+import PropTypes from 'prop-types';
+
 import fetchMovies from '../../Services/ApiService';
 import style from '../views/MovieDetailsPage.module.css';
 
@@ -103,5 +105,12 @@ function MovieDetailsPage() {
     </>
   );
 }
+
+MovieDetailsPage.propTypes = {
+  url: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
+  history: PropTypes.object.isRequired,
+  movieId: PropTypes.object.isRequired,
+};
 
 export default MovieDetailsPage;

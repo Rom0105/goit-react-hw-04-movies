@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 import fetchMovies from '../../Services/ApiService';
 
@@ -26,5 +27,15 @@ function Reviews({ movieId }) {
     </>
   );
 }
+
+Reviews.propTypes = {
+  reviews: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      author: PropTypes.string,
+      content: PropTypes.string,
+    }),
+  ),
+};
 
 export default Reviews;
