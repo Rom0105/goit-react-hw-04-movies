@@ -1,3 +1,37 @@
+.links {
+  margin-top: 20px;
+  flex-basis: calc(25% - 20px);
+  margin-left: 20px;
+
+  box-shadow: 0 0 15px rgb(0 132 255);
+}
+
+.image {
+  display: block;
+  width: 273px;
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -20px;
+  margin-top: -20px;
+  padding: 0;
+
+  list-style-type: none;
+}
+
+.text {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  color: black;
+}
+
 .link {
-  margin-bottom: 5px;
+  text-decoration: none;
 }

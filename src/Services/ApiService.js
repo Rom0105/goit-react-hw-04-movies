@@ -6,7 +6,7 @@ const API_KEY = '28f39dee398e80aa6c8a620368a9d164';
 const fetchMovies = {
   fetchPopularMovies() {
     return axios
-      .get(`${BASE_URL}/trending/movie/day?api_key=${API_KEY}`)
+      .get(`${BASE_URL}/trending/movie/week?api_key=${API_KEY}`)
       .then(response => response.data.results)
       .catch(error => error);
   },
@@ -22,7 +22,7 @@ const fetchMovies = {
 
   fetchMoviesById(movieId) {
     return axios
-      .get(`${BASE_URL}/movie/${movieId}?api_key=${API_KEY}`)
+      .get(`${BASE_URL}/movie/${movieId}?api_key=${API_KEY}&language=en-US`)
       .then(response => response.data)
       .catch(error => error);
   },

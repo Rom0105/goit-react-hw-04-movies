@@ -39,6 +39,7 @@ function MovieDetailsPage() {
           <div className={style.container}>
             <div>
               <img
+                className={style.image}
                 src={
                   movie.poster_path
                     ? `https://image.tmdb.org/t/p/w300${movie.poster_path}`
@@ -66,27 +67,28 @@ function MovieDetailsPage() {
               </ul>
             </div>
           </div>
-
-          <NavLink
-            to={{
-              pathname: `${url}/cast`,
-              state: { ...location.state },
-            }}
-            // className={s.nav_item}
-            // activeClassName={s.activeNavLink}
-          >
-            Cast
-          </NavLink>
-          <NavLink
-            to={{
-              pathname: `${url}/reviews`,
-              state: { ...location.state },
-            }}
-            // className={s.nav_item}
-            // activeClassName={s.activeNavLink}
-          >
-            Reviews
-          </NavLink>
+          <div className={style.links}>
+            <NavLink
+              className={style.link}
+              activeClassName={style.activeLink}
+              to={{
+                pathname: `${url}/cast`,
+                state: { ...location.state },
+              }}
+            >
+              Cast
+            </NavLink>
+            <NavLink
+              className={style.link}
+              activeClassName={style.activeLink}
+              to={{
+                pathname: `${url}/reviews`,
+                state: { ...location.state },
+              }}
+            >
+              Reviews
+            </NavLink>
+          </div>
           <Suspense fallback={<h2>Loading...</h2>}>
             <Route path={`${url}/cast`}>
               <Cast movieId={movieId} />

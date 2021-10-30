@@ -2,10 +2,13 @@
   display: flex;
 
   margin-top: 40px;
+  box-shadow: 0 0 15px rgb(0 132 255);
+  background-color: rgb(244, 255, 233);
 }
 
 .items {
   margin-left: 30px;
+  margin-top: 30px;
 }
 
 .title {
@@ -42,4 +45,25 @@
 
 .item {
   margin-right: 10px;
+}
+
+.links {
+  margin-top: 20px;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  background-color: rgb(236, 236, 236);
+  padding: 5px 5px 5px 5px;
+  border-radius: 14px;
+  margin-right: 10px;
+}
+
+.activeLink {
+  color: rgb(0, 132, 255);
+}
+
+.image {
+  display: block;
 }

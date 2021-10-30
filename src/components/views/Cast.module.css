@@ -1,5 +1,5 @@
 .container {
-  margin-top: 30px;
+  margin-top: 40px;
 }
 .items {
   display: flex;
@@ -13,6 +13,5 @@
 .item {
   list-style: none;
   margin-left: 20px;
-  margin-top: 20px;
   flex-basis: calc(16.66667% - 20px);
 }
