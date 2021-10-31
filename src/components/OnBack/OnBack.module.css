@@ -1,0 +1,12 @@
+.button {
+  padding: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 15px;
+  border: none;
+}
+
+.button:hover,
+.button:focus {
+  color: rgb(0, 132, 255);
+}

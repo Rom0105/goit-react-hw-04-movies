@@ -1,14 +1,17 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import fetchMovies from '../../Services/ApiService';
-import style from '../views/Cast.module.css';
-import defaultImage from '../image/image.png';
+import style from './Cast.module.css';
+import defaultImage from '../../image/image.png';
 
 function Cast({ movieId }) {
   const [cast, setCast] = useState([]);
 
   useEffect(() => {
-    fetchMovies.fetchMovieCast(movieId).then(({ cast }) => setCast(cast));
+    fetchMovies
+      .fetchMovieCast(movieId)
+      .then(({ cast }) => setCast(cast))
+      .catch(error => console.log(error));
   }, [movieId]);
 
   return (

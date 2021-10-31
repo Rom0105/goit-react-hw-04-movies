@@ -1,21 +1,13 @@
-import { useEffect, useState } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import PageHeading from '../PageHeading/PageHeading';
-import fetchMovies from '../../Services/ApiService';
-import styles from '../views/HomePage.module.css';
-import defaultImage from '../image/image.png';
+import { NavLink, useLocation } from 'react-router-dom';
+import styles from '../../components/MovieList/MovieList.module.css';
+import defaultImage from '../../image/image.png';
 
-function HomePage() {
+function MovieList({ movies }) {
   const location = useLocation();
-  const [movies, setMovies] = useState([]);
 
-  useEffect(() => {
-    fetchMovies.fetchPopularMovies().then(results => setMovies(results));
-  }, []);
   return (
     <>
-      <PageHeading />
       <ul className={styles.items}>
         {movies &&
           movies.map(({ id, title, poster_path, vote_average }) => (
@@ -46,7 +38,7 @@ function HomePage() {
   );
 }
 
-HomePage.propTypes = {
+MovieList.propTypes = {
   id: PropTypes.number,
   poster_path: PropTypes.string,
   title: PropTypes.string,
@@ -54,4 +46,4 @@ HomePage.propTypes = {
   vote_average: PropTypes.string,
 };
 
-export default HomePage;
+export default MovieList;

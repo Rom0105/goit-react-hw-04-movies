@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import { NavLink, useLocation, useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import fetchMovies from '../../Services/ApiService';
-import styles from '../views/MoviesPage.module.css';
-import defaultImage from '../image/image.png';
+import styles from '../MoviesPage/MoviesPage.module.css';
+import defaultImage from '../../image/image.png';
 
 function MoviesPage() {
   const location = useLocation();
@@ -26,7 +26,8 @@ function MoviesPage() {
     fetchMovies
       .fetchSearchMovies(queryValue)
       .then(results => setMovie(results))
-      .finally(setSearchQuery(''));
+      .finally(setSearchQuery(''))
+      .catch(error => console.log(error));
 
     history.push({ search: `query=${queryValue}` });
   }, [history, queryValue, search]);
