@@ -2,10 +2,20 @@ import { lazy, Suspense } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import style from '../App/App.module.css';
 
-const Navigation = lazy(() => import('../Navigation/Navigation'));
-const HomePage = lazy(() => import('../../views/HomePage/HomePage'));
-const MoviesPage = lazy(() => import('../../views/MoviesPage/MoviesPage'));
-const MovieDetailsPage = lazy(() => import('../../views/MovieDetailsPage/MovieDetailsPage'));
+const Navigation = lazy(() =>
+  import('../Navigation/Navigation' /* webpackChunkName: "navigation" */),
+);
+const HomePage = lazy(() =>
+  import('../../views/HomePage/HomePage' /* webpackChunkName: "home-page" */),
+);
+const MoviesPage = lazy(() =>
+  import('../../views/MoviesPage/MoviesPage' /* webpackChunkName: "movies-page" */),
+);
+const MovieDetailsPage = lazy(() =>
+  import(
+    '../../views/MovieDetailsPage/MovieDetailsPage' /* webpackChunkName: "movie-details-page" */
+  ),
+);
 
 function App() {
   return (
